@@ -54,21 +54,22 @@ function Index() {
   }
 
   return (
-    <motion.div
-      className="min-h-screen bg-background scanlines"
-      initial={{ opacity: 0, filter: "blur(6px)" }}
-      animate={{ opacity: 1, filter: "blur(0px)" }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-    >
+    <div className="min-h-screen bg-background scanlines">
       <Navbar />
-      <main>
-        <Hero />
-        <Schedule />
-        <Plans />
-        <Location />
-        <InstagramCTA />
-      </main>
-      <Footer />
-    </motion.div>
+      <motion.div
+        initial={{ opacity: 0, filter: "blur(6px)" }}
+        animate={{ opacity: 1, filter: "blur(0px)" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <main>
+          <Hero />
+          <Schedule />
+          <Plans />
+          <Location />
+          <InstagramCTA />
+        </main>
+        <Footer />
+      </motion.div>
+    </div>
   );
 }

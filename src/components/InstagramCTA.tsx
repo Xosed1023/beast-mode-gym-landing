@@ -66,7 +66,7 @@ export function InstagramCTA() {
                   <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                     SIGUE A
                   </span>
-                  <span className="block text-neon-strong text-xl sm:text-2xl md:text-4xl lg:text-5xl break-all">
+                  <span className="block text-neon-strong text-xl sm:text-2xl md:text-4xl lg:text-5xl break-all font-beast-b">
                     @BEAST_MODE_COLOMBIA
                   </span>
                 </h2>

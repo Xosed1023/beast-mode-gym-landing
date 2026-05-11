@@ -39,9 +39,10 @@ export function Schedule() {
             </p>
             <h2
               id="horarios-title"
-              className="font-display font-black text-4xl md:text-6xl text-foreground"
+              className="font-display font-black text-4xl md:text-6xl text-foreground flex items-end justify-center gap-3 flex-wrap"
             >
-              SIEMPRE <span className="text-neon-strong">ACTIVOS</span>
+              <span>SIEMPRE</span>
+              <span className="text-neon-strong font-beast-b leading-none">ACTIVOS</span>
             </h2>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
               Cuando tú estás listo, nosotros también. Encuéntranos abiertos casi cada hora del día.

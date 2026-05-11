@@ -15,7 +15,10 @@ export function Hero() {
       aria-label="Bienvenida"
     >
       {/* Animated grid */}
-      <div className="absolute inset-0 bg-grid animate-grid-move opacity-60" aria-hidden="true" />
+      <div
+        className="absolute inset-0 bg-grid animate-grid-move opacity-60"
+        aria-hidden="true"
+      />
       {/* Hero image */}
       <div className="absolute inset-0" aria-hidden="true">
         <img
@@ -30,8 +33,14 @@ export function Hero() {
       </div>
 
       {/* Glows */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 rounded-full bg-[oklch(0.4_0.3_265)] blur-[120px] opacity-50" aria-hidden="true" />
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 rounded-full bg-[oklch(0.45_0.3_265)] blur-[120px] opacity-40" aria-hidden="true" />
+      <div
+        className="absolute top-1/4 -left-20 w-96 h-96 rounded-full bg-[oklch(0.4_0.3_265)] blur-[120px] opacity-50"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-1/4 -right-20 w-96 h-96 rounded-full bg-[oklch(0.45_0.3_265)] blur-[120px] opacity-40"
+        aria-hidden="true"
+      />
 
       <div className="relative mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="max-w-4xl">
@@ -43,16 +52,20 @@ export function Hero() {
           </div>
 
           <h1 className="font-display font-black text-5xl sm:text-7xl lg:text-8xl xl:text-9xl leading-[0.9] tracking-tight">
-            <span className="block text-foreground">DESPIERTA</span>
-            <span className="block text-neon-strong animate-flicker">LA BESTIA</span>
+            <span className="block text-foreground">
+              DESPIERTA
+            </span>
+            <span className="block text-neon-strong animate-flicker font-beast-b">
+              LA BESTIA
+            </span>
             <span className="block text-foreground/70 text-3xl sm:text-5xl lg:text-6xl mt-2 font-light tracking-widest">
               QUE LLEVAS DENTRO
             </span>
           </h1>
 
           <p className="mt-8 max-w-xl text-base md:text-lg text-muted-foreground font-body leading-relaxed">
-            Más que un gimnasio. Una arena de transformación donde el sudor se convierte en
-            poder y el límite se reescribe cada día.
+            Más que un gimnasio. Una arena de transformación donde el sudor se
+            convierte en poder y el límite se reescribe cada día.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
@@ -77,7 +90,10 @@ export function Hero() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <dl className="grid grid-cols-2 md:grid-cols-4 divide-x divide-[oklch(0.55_0.3_265/0.15)]">
             {stats.map((s, i) => (
-              <div key={s.label} className={`py-6 ${i === 0 ? "" : "pl-6"} pr-6`}>
+              <div
+                key={s.label}
+                className={`py-6 ${i === 0 ? "" : "pl-6"} pr-6`}
+              >
                 <dt className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
                   {s.label}
                 </dt>

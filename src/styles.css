@@ -47,7 +47,7 @@
   --color-neon: var(--neon);
   --color-neon-soft: var(--neon-soft);
   --font-display: "Orbitron", sans-serif;
-  --font-body: "Rajdhani", sans-serif;
+  --font-body: "Barlow", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
   --font-beast-a: "Act of Rejection", serif;
   --font-beast-b: "Another America", serif;
@@ -57,7 +57,7 @@
   --animate-scan: scan 8s linear infinite;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800;900&family=Barlow:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Bebas+Neue&display=swap");
 
 :root {
   --radius: 0.5rem;
@@ -199,7 +199,8 @@
       radial-gradient(ellipse 40% 30% at 30% 55%, oklch(0.2 0.25 265 / 0.15) 0%, transparent 60%);
   }
   .font-beast-a { font-family: var(--font-beast-a); }
-  .font-beast-b { font-family: var(--font-beast-b); }
+  .font-beast-b { font-family: var(--font-beast-b); letter-spacing: 5px;
+  }
   .neon-flicker-beast {
     animation: neon-flicker-beast 4s infinite;
   }

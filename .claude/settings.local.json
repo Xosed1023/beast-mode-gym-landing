@@ -3,7 +3,15 @@
     "allow": [
       "Bash(findstr /i \"framer\\\\|motion\")",
       "Bash(npm install *)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\xosed\\\\Documents\\\\Xosed\\\\Projects\\\\IA-tests\\\\v4-Lovable\" -Recurse -Force)",
+      "Bash(Select-Object FullName, PSIsContainer)",
+      "Bash(Sort-Object FullName)",
+      "Bash(Format-Table -AutoSize)",
+      "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\xosed\\\\Documents\\\\Xosed\\\\Projects\\\\IA-tests\\\\v4-Lovable\" -Force | Where-Object {$_.PSIsContainer -eq $false} | Select-Object Name, Length | Sort-Object Name)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"cyberpunk dark gym fitness aggressive neon display\" --domain typography -n 8)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"cyberpunk dark gym\" --domain typography -n 6)",
+      "Bash(curl -sI \"https://maps.app.goo.gl/wU2kdn1RBEz8Hk1Z8\")"
     ]
   }
 }

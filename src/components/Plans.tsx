@@ -38,7 +38,7 @@ export function Plans() {
   return (
     <section id="planes" className="relative py-24 md:py-32" aria-labelledby="planes-title">
       <div className="absolute inset-0 bg-grid opacity-20" aria-hidden="true" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[oklch(0.4_0.3_265)] blur-[150px] opacity-30" aria-hidden="true" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 rounded-full bg-[oklch(0.4_0.3_265)] blur-[150px] opacity-30" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
@@ -48,9 +48,10 @@ export function Plans() {
             </p>
             <h2
               id="planes-title"
-              className="font-display font-black text-4xl md:text-6xl text-foreground"
+              className="font-display font-black text-4xl md:text-6xl text-foreground flex items-end justify-center gap-3 flex-wrap"
             >
-              ELIGE TU <span className="text-neon-strong">ARMA</span>
+              <span>ELIGE TU</span>
+              <span className="text-neon-strong font-beast-b leading-none">ARMA</span>
             </h2>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
               Tres caminos. Un solo objetivo: convertirte en la mejor versión de ti.
@@ -94,7 +95,7 @@ export function Plans() {
                 <ul className="space-y-3 flex-1 mb-8" role="list">
                   {p.features.map((f) => (
                     <li key={f} className="flex items-start gap-3 text-sm text-foreground/90">
-                      <Check className="h-5 w-5 flex-shrink-0 text-neon mt-0.5" />
+                      <Check className="h-5 w-5 shrink-0 text-neon mt-0.5" />
                       <span>{f}</span>
                     </li>
                   ))}

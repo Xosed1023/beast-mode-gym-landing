@@ -78,7 +78,7 @@ export function Location() {
               </div>
 
               <a
-                href="https://maps.app.goo.gl/QwfLKq4GPdfSsbFU8"
+                href="https://maps.app.goo.gl/wU2kdn1RBEz8Hk1Z8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-6 py-3 font-display font-bold uppercase tracking-wider bg-[oklch(0.38_0.28_265)] text-white rounded border border-[oklch(0.7_0.3_265)] glow-box hover:bg-[oklch(0.45_0.3_265)] transition-all"
@@ -92,7 +92,7 @@ export function Location() {
           <Reveal delay={150}>
             <div className="relative h-full min-h-[400px] rounded-lg overflow-hidden border border-[oklch(0.55_0.3_265/0.3)] glow-box">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.5!2d-74.0817!3d4.5709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMzQnMTUuMiJOIDc0wrAwNCc1NC4xIlc!5e0!3m2!1sen!2sco!4v1700000000000"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d498!2d-74.0812!3d4.5741185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f995b98785e13%3A0xbb9e4d0e01befe1d!2sBeastMode%20Gym!5e0!3m2!1ses!2sco!4v1715000000000"
                 width="100%"
                 height="100%"
                 style={{ border: 0, filter: "invert(0.92) hue-rotate(180deg) brightness(0.85) contrast(1.1)" }}

@@ -16,8 +16,8 @@ export function Footer() {
           <div className="flex items-center gap-3">
             <img src={logo} alt="Logo BeastMode Gym" className="h-12 w-12 rounded-full object-cover border border-[oklch(0.55_0.3_265/0.5)]" width={48} height={48} />
             <div>
-              <p className="font-display font-black text-lg tracking-widest text-neon">
-                BEAST<span className="text-foreground">MODE</span>
+              <p className="font-display font-black text-lg tracking-widest text-neon flex items-center">
+                <span className="font-beast-b leading-none translate-y-px">BEAST</span><span className="text-foreground leading-none">MODE</span>
               </p>
               <p className="text-xs text-muted-foreground font-mono uppercase tracking-wider">
                 Gym // Bogotá
