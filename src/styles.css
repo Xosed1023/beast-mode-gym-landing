@@ -1,0 +1,206 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-neon: var(--neon);
+  --color-neon-soft: var(--neon-soft);
+  --font-display: "Orbitron", sans-serif;
+  --font-body: "Rajdhani", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --animate-flicker: flicker 4s infinite;
+  --animate-pulse-neon: pulse-neon 2s ease-in-out infinite;
+  --animate-grid-move: grid-move 20s linear infinite;
+  --animate-scan: scan 8s linear infinite;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.08 0.02 264);
+  --foreground: oklch(0.98 0.01 240);
+  --card: oklch(0.11 0.03 264);
+  --card-foreground: oklch(0.98 0.01 240);
+  --popover: oklch(0.11 0.03 264);
+  --popover-foreground: oklch(0.98 0.01 240);
+  /* #0012d3 in oklch */
+  --primary: oklch(0.38 0.28 265);
+  --primary-foreground: oklch(0.98 0.01 240);
+  --secondary: oklch(0.18 0.04 264);
+  --secondary-foreground: oklch(0.98 0.01 240);
+  --muted: oklch(0.16 0.03 264);
+  --muted-foreground: oklch(0.7 0.04 250);
+  --accent: oklch(0.55 0.32 265);
+  --accent-foreground: oklch(0.98 0.01 240);
+  --destructive: oklch(0.6 0.25 25);
+  --destructive-foreground: oklch(0.98 0.01 240);
+  --border: oklch(0.22 0.05 264);
+  --input: oklch(0.18 0.04 264);
+  --ring: oklch(0.55 0.32 265);
+  /* Neon brand */
+  --neon: oklch(0.62 0.28 265);
+  --neon-soft: oklch(0.45 0.3 265);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  body {
+    overflow-x: hidden;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    background-image:
+      radial-gradient(ellipse at top, oklch(0.18 0.15 265 / 0.4) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom, oklch(0.18 0.15 265 / 0.2) 0%, transparent 60%);
+    background-attachment: fixed;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer utilities {
+  .text-neon {
+    color: oklch(0.7 0.25 265);
+    text-shadow:
+      0 0 10px oklch(0.55 0.3 265 / 0.8),
+      0 0 20px oklch(0.5 0.3 265 / 0.6),
+      0 0 40px oklch(0.45 0.3 265 / 0.4);
+  }
+  .text-neon-strong {
+    color: oklch(0.85 0.18 265);
+    text-shadow:
+      0 0 5px oklch(0.7 0.3 265),
+      0 0 15px oklch(0.6 0.3 265),
+      0 0 30px oklch(0.5 0.3 265),
+      0 0 60px oklch(0.45 0.3 265 / 0.7);
+  }
+  .border-neon {
+    border-color: oklch(0.55 0.3 265 / 0.5);
+    box-shadow:
+      0 0 10px oklch(0.55 0.3 265 / 0.4),
+      inset 0 0 10px oklch(0.45 0.3 265 / 0.15);
+  }
+  .glow-box {
+    box-shadow:
+      0 0 20px oklch(0.5 0.3 265 / 0.4),
+      0 0 40px oklch(0.45 0.3 265 / 0.25),
+      0 0 80px oklch(0.4 0.3 265 / 0.15);
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(oklch(0.55 0.3 265 / 0.12) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.55 0.3 265 / 0.12) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  .scanlines::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 2px,
+      oklch(0.55 0.3 265 / 0.025) 2px,
+      oklch(0.55 0.3 265 / 0.025) 3px
+    );
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .neon-top-border {
+    position: relative;
+    overflow: hidden;
+  }
+  .neon-top-border::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, oklch(0.7 0.3 265), transparent);
+    box-shadow: 0 0 20px oklch(0.6 0.3 265);
+    transition: all 0.5s ease;
+    transform: translateX(-50%);
+  }
+  .neon-top-border:hover::before {
+    width: 100%;
+  }
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow:
+      0 0 5px oklch(0.7 0.3 265),
+      0 0 15px oklch(0.6 0.3 265),
+      0 0 30px oklch(0.5 0.3 265),
+      0 0 60px oklch(0.45 0.3 265 / 0.7);
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+    opacity: 0.85;
+  }
+}
+
+@keyframes pulse-neon {
+  0%, 100% {
+    box-shadow: 0 0 5px oklch(0.7 0.3 142), 0 0 15px oklch(0.6 0.3 142 / 0.6);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 15px oklch(0.7 0.3 142), 0 0 30px oklch(0.6 0.3 142 / 0.9);
+    opacity: 0.85;
+  }
+}
+
+@keyframes grid-move {
+  0% { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
