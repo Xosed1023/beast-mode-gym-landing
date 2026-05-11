@@ -2,6 +2,22 @@
 @source "../src";
 @import "tw-animate-css";
 
+@font-face {
+  font-family: "Act of Rejection";
+  src: url("./assets/fonts/act-of-rejection/Act_Of_Rejection.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Another America";
+  src: url("./assets/fonts/another-america/Another_America(RUS BY LYAJKA).otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -33,13 +49,15 @@
   --font-display: "Orbitron", sans-serif;
   --font-body: "Rajdhani", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
+  --font-beast-a: "Act of Rejection", serif;
+  --font-beast-b: "Another America", serif;
   --animate-flicker: flicker 4s infinite;
   --animate-pulse-neon: pulse-neon 2s ease-in-out infinite;
   --animate-grid-move: grid-move 20s linear infinite;
   --animate-scan: scan 8s linear infinite;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Bebas+Neue&display=swap");
 
 :root {
   --radius: 0.5rem;
@@ -167,6 +185,43 @@
   .neon-top-border:hover::before {
     width: 100%;
   }
+  .splash-vignette {
+    background: radial-gradient(
+      ellipse at center,
+      transparent 40%,
+      oklch(0.04 0.01 264 / 0.7) 80%,
+      oklch(0.02 0.01 264 / 0.95) 100%
+    );
+  }
+  .splash-ambient-glow {
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 45%, oklch(0.25 0.2 265 / 0.35) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 30% at 30% 55%, oklch(0.2 0.25 265 / 0.15) 0%, transparent 60%);
+  }
+  .font-beast-a { font-family: var(--font-beast-a); }
+  .font-beast-b { font-family: var(--font-beast-b); }
+  .neon-flicker-beast {
+    animation: neon-flicker-beast 4s infinite;
+  }
+  .neon-flicker-mode {
+    animation: neon-flicker-mode 4s 0.4s infinite;
+  }
+  .text-beast-glow {
+    color: oklch(0.82 0.2 265);
+    text-shadow:
+      0 0 8px oklch(0.7 0.3 265),
+      0 0 20px oklch(0.6 0.3 265 / 0.8),
+      0 0 40px oklch(0.5 0.3 265 / 0.5);
+  }
+  .text-beast-glow-intense {
+    color: oklch(0.92 0.12 265);
+    text-shadow:
+      0 0 4px oklch(0.9 0.15 265),
+      0 0 12px oklch(0.75 0.28 265),
+      0 0 28px oklch(0.65 0.3 265),
+      0 0 56px oklch(0.55 0.3 265 / 0.8),
+      0 0 100px oklch(0.45 0.3 265 / 0.4);
+  }
 }
 
 @keyframes flicker {
@@ -182,6 +237,41 @@
     text-shadow: none;
     opacity: 0.85;
   }
+}
+
+/* Flicker solo de text-shadow — sin opacity para no conflictuar con Framer Motion */
+@keyframes neon-flicker-beast {
+  0%, 18%, 22%, 26%, 56%, 100% {
+    text-shadow:
+      0 0 4px oklch(0.9 0.15 265),
+      0 0 12px oklch(0.75 0.28 265),
+      0 0 28px oklch(0.65 0.3 265),
+      0 0 56px oklch(0.55 0.3 265 / 0.8),
+      0 0 100px oklch(0.45 0.3 265 / 0.4);
+  }
+  19%, 23%, 24%, 25%, 54%, 55% {
+    text-shadow: none;
+  }
+}
+
+@keyframes neon-flicker-mode {
+  0%, 18%, 22%, 26%, 56%, 100% {
+    text-shadow:
+      0 0 4px oklch(0.98 0.05 240),
+      0 0 10px oklch(0.9 0.18 265),
+      0 0 24px oklch(0.78 0.28 265 / 0.9),
+      0 0 48px oklch(0.65 0.3 265 / 0.7),
+      0 0 90px oklch(0.5 0.3 265 / 0.4);
+  }
+  19%, 23%, 24%, 25%, 54%, 55% {
+    text-shadow: none;
+  }
+}
+
+@keyframes neon-ring-power {
+  0%   { box-shadow: 0 0 4px oklch(0.55 0.3 265 / 0.4), inset 0 0 4px oklch(0.45 0.3 265 / 0.2); }
+  50%  { box-shadow: 0 0 24px oklch(0.72 0.3 265 / 0.9), 0 0 48px oklch(0.6 0.3 265 / 0.6), inset 0 0 16px oklch(0.55 0.3 265 / 0.3); }
+  100% { box-shadow: 0 0 14px oklch(0.68 0.3 265 / 0.8), 0 0 32px oklch(0.58 0.3 265 / 0.5), inset 0 0 10px oklch(0.5 0.3 265 / 0.25); }
 }
 
 @keyframes pulse-neon {
@@ -203,4 +293,15 @@
 @keyframes scan {
   0% { transform: translateY(-100%); }
   100% { transform: translateY(100vh); }
+}
+
+@keyframes splash-fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes splash-exit {
+  0%   { opacity: 1; filter: blur(0); transform: scale(1); }
+  60%  { opacity: 0.6; filter: blur(2px); transform: scale(1.02); }
+  100% { opacity: 0; filter: blur(8px); transform: scale(1.04); }
 }

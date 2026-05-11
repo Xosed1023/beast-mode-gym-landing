@@ -1,6 +1,8 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import actOfRejectionUrl from "../assets/fonts/act-of-rejection/Act_Of_Rejection.ttf?url";
+import anotherAmericaUrl from "../assets/fonts/another-america/Another_America(RUS BY LYAJKA).otf?url";
 
 function NotFoundComponent() {
   return (
@@ -39,9 +41,20 @@ export const Route = createRootRoute({
       { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
       {
-        rel: "stylesheet",
-        href: appCss,
+        rel: "preload",
+        href: actOfRejectionUrl,
+        as: "font",
+        type: "font/truetype",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "preload",
+        href: anotherAmericaUrl,
+        as: "font",
+        type: "font/otf",
+        crossOrigin: "anonymous",
       },
     ],
   }),
