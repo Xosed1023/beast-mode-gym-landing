@@ -38,3 +38,5 @@ desktop.ini
 **/.agents/
 skills-lock.json
 **/skills-lock.json
+
+.vercel
