@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BeastMode Gym en San Cristobal Sur. Entrenamiento funcional, fuerza, acompanamiento y planes flexibles con vibra premium y energia neon.">
+  <title>BeastMode Gym | Fuerza, disciplina y comunidad</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            beast: {
+              bg: "#05070b",
+              panel: "#0f1726",
+              panelSoft: "#111b2d",
+              line: "rgba(132, 160, 255, 0.20)",
+              blue: "#4ec7ff",
+              blueStrong: "#1596ff",
+              text: "#f5f7fb",
+              muted: "#a8b5cf",
+              warm: "#ff7a1f"
+            }
+          },
+          fontFamily: {
+            display: ["Bebas Neue", "sans-serif"],
+            body: ["Space Grotesk", "sans-serif"]
+          },
+          boxShadow: {
+            glow: "0 0 30px rgba(78, 199, 255, 0.28)",
+            panel: "0 22px 60px rgba(0, 0, 0, 0.35)"
+          },
+          backgroundImage: {
+            "page-glow": "radial-gradient(circle at top left, rgba(21, 150, 255, 0.2), transparent 28%), radial-gradient(circle at 80% 20%, rgba(255, 122, 31, 0.14), transparent 20%), linear-gradient(180deg, #030507 0%, #060912 42%, #05070b 100%)",
+            "hero-overlay": "linear-gradient(90deg, rgba(3, 5, 7, 0.92) 0%, rgba(3, 5, 7, 0.7) 35%, rgba(3, 5, 7, 0.5) 100%), linear-gradient(180deg, rgba(5, 7, 11, 0.3) 0%, rgba(5, 7, 11, 0.8) 100%)",
+            "success-gradient": "radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.07), transparent 25%), linear-gradient(135deg, rgba(19, 129, 214, 0.92) 0%, rgba(8, 94, 169, 0.96) 45%, rgba(5, 25, 59, 0.98) 100%)"
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    .skip-link {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .skip-link:focus {
+      width: auto;
+      height: auto;
+      margin: 1rem;
+      padding: 0.75rem 1rem;
+      clip: auto;
+      background: #fff;
+      color: #000;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body class="bg-page-glow font-body text-beast-text antialiased">
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
+  <header class="sticky top-0 z-50 px-4 py-5" id="top">
+    <div class="mx-auto w-full max-w-[1200px]">
+      <nav class="flex flex-wrap items-start gap-4 rounded-[28px] border border-white/10 bg-[rgba(6,10,19,0.72)] px-4 py-3 shadow-panel backdrop-blur-xl md:flex-nowrap md:items-center md:justify-between md:rounded-full md:px-5 lg:px-6" aria-label="Principal">
+        <a class="inline-flex items-center gap-3" href="#top" aria-label="BeastMode Gym inicio">
+          <img class="h-12 w-12 rounded-2xl border border-beast-blue/40 object-cover shadow-glow md:h-14 md:w-14" src="logo.jpg" alt="Logo BeastMode Gym con leon neon levantando barra">
+          <span class="grid">
+            <strong class="font-display text-2xl uppercase tracking-[0.04em] leading-none">BeastMode Gym</strong>
+            <small class="text-sm text-beast-muted">San Cristobal Sur</small>
+          </span>
+        </a>
+
+        <button class="menu-toggle inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-beast-text md:hidden" type="button" aria-expanded="false" aria-controls="menu">
+          <span class="sr-only">Abrir menu</span>
+          <span class="flex flex-col gap-1.5">
+            <span class="block h-0.5 w-[18px] rounded-full bg-current"></span>
+            <span class="block h-0.5 w-[18px] rounded-full bg-current"></span>
+            <span class="block h-0.5 w-[18px] rounded-full bg-current"></span>
+          </span>
+        </button>
+
+        <div class="menu hidden w-full flex-col gap-4 pt-3 md:ml-auto md:flex md:w-auto md:flex-row md:items-center md:justify-end md:gap-3 md:pt-0" id="menu">
+          <div class="flex flex-col gap-4 md:flex-row md:items-center md:gap-7 md:rounded-full md:border md:border-white/8 md:bg-white/[0.02] md:px-6 md:py-3">
+            <a class="text-beast-muted transition hover:text-white focus-visible:text-white" href="#inicio">Inicio</a>
+            <a class="text-beast-muted transition hover:text-white focus-visible:text-white" href="#planes">Planes</a>
+            <a class="text-beast-muted transition hover:text-white focus-visible:text-white" href="#historias">Resultados</a>
+            <a class="text-beast-muted transition hover:text-white focus-visible:text-white" href="#contacto">Contacto</a>
+          </div>
+          <a class="inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-br from-beast-blue to-[#8de2ff] px-5 py-3 font-bold text-[#051018] shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_0_25px_rgba(78,199,255,0.35)] transition hover:-translate-y-0.5" href="https://maps.app.goo.gl/QwfLKq4GPdfSsbFU8" target="_blank" rel="noreferrer">Como llegar</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="relative scroll-mt-32 overflow-hidden px-4 pb-20 pt-10 md:min-h-[calc(100dvh-5.5rem)] md:scroll-mt-36 md:pt-12 lg:pt-14" id="inicio">
+      <div class="absolute inset-0 bg-hero-overlay"></div>
+      <div class="absolute inset-0 bg-[url('base.jpg')] bg-cover bg-center md:bg-[center_26%]"></div>
+      <div class="absolute inset-0 bg-hero-overlay"></div>
+
+      <div class="relative mx-auto grid min-h-[76dvh] max-w-[1200px] items-start gap-8 md:items-end lg:grid-cols-[minmax(0,1.08fr)_minmax(320px,0.72fr)] lg:gap-10">
+        <div class="reveal translate-y-6 self-center opacity-0 transition duration-700 ease-out">
+          <p class="font-display text-lg uppercase tracking-[0.22em] text-beast-blue">Entrena con actitud. Evoluciona con constancia.</p>
+          <h1 class="max-w-[760px] font-display text-[3.4rem] uppercase leading-[0.92] tracking-[0.04em] md:text-[5rem] lg:text-[6.8rem] xl:text-[7.4rem]">Fuerza real, enfoque total y energia <span class="text-white [text-shadow:0_0_24px_rgba(78,199,255,0.16)]">BeastMode</span>.</h1>
+          <p class="mt-5 max-w-[640px] text-base leading-8 text-beast-muted md:text-[1.02rem]">
+            Un gimnasio de barrio con mentalidad de alto rendimiento. En BeastMode Gym combinamos disciplina,
+            acompanamiento y un ambiente intenso para que cada sesion cuente.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a class="inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-br from-beast-blue to-[#8de2ff] px-5 py-3 font-bold text-[#051018] shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_0_25px_rgba(78,199,255,0.35)] transition hover:-translate-y-0.5" href="#planes">Ver planes</a>
+            <a class="inline-flex min-h-12 items-center justify-center rounded-full border border-beast-blue/35 bg-[rgba(8,16,28,0.6)] px-5 py-3 font-bold text-white transition hover:-translate-y-0.5" href="https://www.instagram.com/beast_mode_colombia/" target="_blank" rel="noreferrer">Hablar por Instagram</a>
+          </div>
+
+          <ul class="mt-6 flex flex-wrap gap-3" aria-label="Beneficios principales">
+            <li class="rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm text-[#dce6f8]">Zona de fuerza y funcional</li>
+            <li class="rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm text-[#dce6f8]">Horarios extendidos</li>
+            <li class="rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm text-[#dce6f8]">Ambiente motivador</li>
+          </ul>
+        </div>
+
+        <aside class="reveal grid translate-y-6 gap-4 opacity-0 transition duration-700 ease-out lg:self-center lg:pt-20" aria-label="Informacion destacada">
+          <div class="rounded-3xl border border-beast-line bg-gradient-to-b from-[rgba(17,25,41,0.86)] to-[rgba(8,13,22,0.92)] p-6 shadow-panel backdrop-blur-xl">
+            <p class="font-display text-xs uppercase tracking-[0.22em] text-beast-blue">Horario semanal</p>
+            <ul class="mt-2 divide-y divide-white/10">
+              <li class="flex flex-col gap-1 py-3 text-sm md:flex-row md:items-center md:justify-between"><span class="text-beast-muted">Lunes a viernes</span><strong>5:00 am - 10:00 pm</strong></li>
+              <li class="flex flex-col gap-1 py-3 text-sm md:flex-row md:items-center md:justify-between"><span class="text-beast-muted">Sabados</span><strong>8:00 am - 4:00 pm</strong></li>
+              <li class="flex flex-col gap-1 py-3 text-sm md:flex-row md:items-center md:justify-between"><span class="text-beast-muted">Domingos</span><strong>8:00 am - 2:00 pm</strong></li>
+            </ul>
+          </div>
+
+          <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-2">
+            <article class="rounded-3xl border border-beast-line bg-gradient-to-b from-[rgba(17,25,41,0.86)] to-[rgba(8,13,22,0.92)] p-6 shadow-panel backdrop-blur-xl">
+              <strong class="block font-display text-4xl uppercase tracking-[0.05em] text-white">+10</strong>
+              <span class="text-sm leading-6 text-beast-muted">entrenadores y aliados fitness</span>
+            </article>
+            <article class="rounded-3xl border border-beast-line bg-gradient-to-b from-[rgba(17,25,41,0.86)] to-[rgba(8,13,22,0.92)] p-6 shadow-panel backdrop-blur-xl">
+              <strong class="block font-display text-4xl uppercase tracking-[0.05em] text-white">1 prueba</strong>
+              <span class="text-sm leading-6 text-beast-muted">de cortesia para sentir la energia del espacio</span>
+            </article>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="scroll-mt-32 bg-gradient-to-b from-[rgba(11,16,28,0.7)] to-transparent px-4 py-20 md:scroll-mt-36" id="training">
+      <div class="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1fr_1.1fr_0.8fr] lg:items-center">
+        <div class="reveal translate-y-6 opacity-0 transition duration-700 ease-out lg:col-span-1">
+          <p class="font-display text-lg uppercase tracking-[0.22em] text-beast-blue">Personal Training</p>
+          <h2 class="mt-2 font-display text-[2.6rem] uppercase leading-[0.95] tracking-[0.04em] text-white [text-shadow:0_0_24px_rgba(78,199,255,0.16)] md:text-[4.3rem]">Entrenamiento que empuja tu mejor version.</h2>
+          <p class="mt-4 max-w-xl text-base leading-8 text-beast-muted">
+            Desde quienes apenas comienzan hasta quienes buscan subir nivel en fuerza, resistencia y composicion corporal,
+            aqui encuentras guia cercana, correccion tecnica y una rutina que no se siente generica.
+          </p>
+
+          <div class="mt-8 rounded-[24px] border border-beast-line bg-gradient-to-b from-[rgba(17,25,41,0.86)] to-[rgba(8,13,22,0.92)] p-6 shadow-panel backdrop-blur-xl">
+            <span class="font-display text-xs uppercase tracking-[0.22em] text-beast-blue">We offer</span>
+            <h3 class="mt-3 font-display text-[2rem] uppercase leading-none tracking-[0.04em]">Sesiones de prueba sin costo</h3>
+            <p class="mt-3 text-base leading-7 text-beast-muted">Conoce el espacio, valida el ambiente y descubre el plan que mejor se ajusta a tu ritmo.</p>
+            <a class="mt-5 inline-flex min-h-12 items-center justify-center rounded-full border border-beast-blue/35 bg-[rgba(8,16,28,0.6)] px-5 py-3 font-bold text-white transition hover:-translate-y-0.5" href="#planes">Explorar planes</a>
+          </div>
+        </div>
+
+        <div class="reveal relative translate-y-6 opacity-0 transition duration-700 ease-out">
+          <div class="absolute inset-x-[10%] bottom-[-5%] h-[40%] rounded-full bg-beast-blue/20 blur-[50px]"></div>
+          <img class="relative min-h-[340px] w-full rounded-[32px] border border-white/10 object-cover shadow-panel md:min-h-[420px] lg:min-h-[520px]" src="base.jpg" alt="Entrenamiento en BeastMode Gym con equipo de fuerza y ambiente intenso">
+        </div>
+
+        <div class="reveal grid translate-y-6 gap-4 opacity-0 transition duration-700 ease-out">
+          <article class="rounded-[24px] border border-beast-line bg-gradient-to-b from-[rgba(17,25,41,0.86)] to-[rgba(8,13,22,0.92)] p-6 shadow-panel backdrop-blur-xl">
+            <p class="font-display text-xs uppercase tracking-[0.22em] text-beast-blue">Coach support</p>
+            <h3 class="mt-3 font-display text-[2rem] uppercase leading-none tracking-[0.04em]">Seguimiento cercano y energia competitiva</h3>
+            <p class="mt-3 text-base leading-7 text-beast-muted">Te ayudamos a mantener tecnica, intensidad y constancia con una experiencia directa y sin vueltas.</p>
+          </article>
+          <article class="rounded-[24px] border border-beast-blue/40 bg-[radial-gradient(circle_at_top_right,rgba(78,199,255,0.18),transparent_45%),linear-gradient(180deg,rgba(18,29,48,0.95)_0%,rgba(9,14,24,0.95)_100%)] p-6 shadow-panel">
+            <strong class="block font-display text-[2.4rem] uppercase leading-none tracking-[0.05em] text-white">+10 personal trainers</strong>
+            <p class="mt-3 text-base leading-7 text-beast-muted">Un equipo en crecimiento enfocado en rendimiento, habitos y resultados visibles.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="scroll-mt-32 px-4 py-16 md:scroll-mt-36" id="planes">
+      <div class="mx-auto max-w-7xl">
+        <div class="reveal mx-auto max-w-3xl translate-y-6 text-center opacity-0 transition duration-700 ease-out">
+          <p class="font-display text-lg uppercase tracking-[0.22em] text-beast-blue">Membership</p>
+          <h2 class="mt-2 font-display text-[2.6rem] uppercase leading-[0.95] tracking-[0.04em] text-white [text-shadow:0_0_24px_rgba(78,199,255,0.16)] md:text-[4.3rem]">Planes flexibles para adaptarse a tu estilo de vida.</h2>
+          <p class="mt-4 text-base leading-8 text-beast-muted">Escoge el nivel de acompanamiento que necesitas y entrena a tu ritmo con acceso a la energia BeastMode.</p>
+        </div>
+
+        <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <article class="reveal translate-y-6 rounded-[32px] border border-beast-line bg-gradient-to-b from-[rgba(15,21,36,0.95)] to-[rgba(10,15,24,0.95)] p-6 opacity-0 shadow-panel transition duration-700 ease-out hover:-translate-y-2 hover:border-beast-blue/45 hover:shadow-[0_22px_70px_rgba(0,0,0,0.45),0_0_34px_rgba(78,199,255,0.16)]">
+            <span class="inline-flex rounded-full bg-white/5 px-3 py-1 text-sm text-[#d5e7ff]">Basic</span>
+            <h3 class="mt-4 font-display text-5xl uppercase leading-none">$89.000<span class="ml-1 font-body text-base text-beast-muted">/mes</span></h3>
+            <ul class="mt-5 space-y-3 text-beast-muted">
+              <li class="border-t border-white/10 pt-3">Acceso general al gimnasio</li>
+              <li class="border-t border-white/10 pt-3">Horario base entre semana</li>
+              <li class="border-t border-white/10 pt-3">Rutina inicial guiada</li>
+              <li class="border-t border-white/10 pt-3">Evaluacion de arranque</li>
+            </ul>
+            <a class="mt-6 inline-flex min-h-12 items-center justify-center rounded-full border border-beast-blue/35 bg-[rgba(8,16,28,0.6)] px-5 py-3 font-bold text-white transition hover:-translate-y-0.5" href="#contacto">Empezar</a>
+          </article>
+
+          <article class="reveal translate-y-6 rounded-[32px] border border-beast-line bg-gradient-to-b from-[rgba(15,21,36,0.95)] to-[rgba(10,15,24,0.95)] p-6 opacity-0 shadow-panel transition duration-700 ease-out hover:-translate-y-2 hover:border-beast-blue/45 hover:shadow-[0_22px_70px_rgba(0,0,0,0.45),0_0_34px_rgba(78,199,255,0.16)]">
+            <span class="inline-flex rounded-full bg-white/5 px-3 py-1 text-sm text-[#d5e7ff]">Advanced</span>
+            <h3 class="mt-4 font-display text-5xl uppercase leading-none">$119.000<span class="ml-1 font-body text-base text-beast-muted">/mes</span></h3>
+            <ul class="mt-5 space-y-3 text-beast-muted">
+              <li class="border-t border-white/10 pt-3">Acceso completo a maquinas y peso libre</li>
+              <li class="border-t border-white/10 pt-3">Orientacion de progreso</li>
+              <li class="border-t border-white/10 pt-3">Clase funcional grupal</li>
+              <li class="border-t border-white/10 pt-3">Prioridad en horarios pico</li>
+            </ul>
+            <a class="mt-6 inline-flex min-h-12 items-center justify-center rounded-full border border-beast-blue/35 bg-[rgba(8,16,28,0.6)] px-5 py-3 font-bold text-white transition hover:-translate-y-0.5" href="#contacto">Quiero subir nivel</a>
+          </article>
+
+          <article class="reveal relative translate-y-6 rounded-[32px] border border-beast-blue/45 bg-[radial-gradient(circle_at_top,rgba(78,199,255,0.24),transparent_38%),linear-gradient(180deg,rgba(18,28,46,0.98)_0%,rgba(10,17,30,0.98)_100%)] p-6 opacity-0 shadow-panel transition duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_22px_70px_rgba(0,0,0,0.45),0_0_34px_rgba(78,199,255,0.16)]">
+            <span class="absolute right-4 top-4 text-[0.75rem] uppercase tracking-[0.18em] text-beast-blue">Most popular</span>
+            <span class="inline-flex rounded-full bg-white/5 px-3 py-1 text-sm text-[#d5e7ff]">Premium</span>
+            <h3 class="mt-4 font-display text-5xl uppercase leading-none">$149.000<span class="ml-1 font-body text-base text-beast-muted">/mes</span></h3>
+            <ul class="mt-5 space-y-3 text-beast-muted">
+              <li class="border-t border-white/10 pt-3">Professional trainers</li>
+              <li class="border-t border-white/10 pt-3">All facilities</li>
+              <li class="border-t border-white/10 pt-3">Free drinks and supplement</li>
+              <li class="border-t border-white/10 pt-3">Diet program y seguimiento</li>
+            </ul>
+            <a class="mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-br from-beast-blue to-[#8de2ff] px-5 py-3 font-bold text-[#051018] shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_0_25px_rgba(78,199,255,0.35)] transition hover:-translate-y-0.5" href="#contacto">Elegir premium</a>
+          </article>
+
+          <article class="reveal translate-y-6 rounded-[32px] border border-beast-line bg-gradient-to-b from-[rgba(15,21,36,0.95)] to-[rgba(10,15,24,0.95)] p-6 opacity-0 shadow-panel transition duration-700 ease-out hover:-translate-y-2 hover:border-beast-blue/45 hover:shadow-[0_22px_70px_rgba(0,0,0,0.45),0_0_34px_rgba(78,199,255,0.16)]">
+            <span class="inline-flex rounded-full bg-white/5 px-3 py-1 text-sm text-[#d5e7ff]">Family</span>
+            <h3 class="mt-4 font-display text-5xl uppercase leading-none">$259.000<span class="ml-1 font-body text-base text-beast-muted">/mes</span></h3>
+            <ul class="mt-5 space-y-3 text-beast-muted">
+              <li class="border-t border-white/10 pt-3">Plan para 3 personas</li>
+              <li class="border-t border-white/10 pt-3">Ingreso de fin de semana incluido</li>
+              <li class="border-t border-white/10 pt-3">Asesoria compartida</li>
+              <li class="border-t border-white/10 pt-3">Ahorro frente a planes individuales</li>
+            </ul>
+            <a class="mt-6 inline-flex min-h-12 items-center justify-center rounded-full border border-beast-blue/35 bg-[rgba(8,16,28,0.6)] px-5 py-3 font-bold text-white transition hover:-translate-y-0.5" href="#contacto">Consultar cupos</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="scroll-mt-32 bg-success-gradient px-4 py-20 md:scroll-mt-36" id="historias">
+      <div class="mx-auto grid max-w-7xl gap-6 lg:grid-cols-2">
+        <div class="reveal translate-y-6 opacity-0 transition duration-700 ease-out">
+          <p class="font-display text-lg uppercase tracking-[0.22em] text-white/80">Success Stories</p>
+          <h2 class="mt-2 font-display text-[2.6rem] uppercase leading-[0.95] tracking-[0.04em] text-white md:text-[4.3rem]">Historias de constancia que se convierten en resultados.</h2>
+          <p class="mt-4 max-w-xl text-base leading-8 text-white/80">
+            Cada proceso es distinto, pero todos arrancan igual: dando el primer paso. Este espacio esta pensado para
+            personas que quieren sentirse mas fuertes, mas seguras y mas disciplinadas.
+          </p>
+        </div>
+
+        <div class="reveal translate-y-6 opacity-0 transition duration-700 ease-out" aria-label="Testimonios destacados">
+          <div class="testimonial-track">
+            <article class="testimonial rounded-[24px] border border-white/15 bg-white/10 p-6 shadow-panel backdrop-blur-xl">
+              <p class="text-lg leading-8 text-white">"Pase de entrenar sin rumbo a sentir progreso real. El ambiente aqui te obliga a dar mas."</p>
+              <strong class="mt-6 block text-lg">Camila R.</strong>
+              <span class="text-white/75">Resistencia y tonificacion</span>
+            </article>
+            <article class="testimonial hidden rounded-[24px] border border-white/15 bg-white/10 p-6 shadow-panel backdrop-blur-xl">
+              <p class="text-lg leading-8 text-white">"Lo que mas valoro es la energia del lugar: se siente serio, intenso y al mismo tiempo cercano."</p>
+              <strong class="mt-6 block text-lg">Andres M.</strong>
+              <span class="text-white/75">Fuerza y recomposicion</span>
+            </article>
+            <article class="testimonial hidden rounded-[24px] border border-white/15 bg-white/10 p-6 shadow-panel backdrop-blur-xl">
+              <p class="text-lg leading-8 text-white">"Los horarios me salvaron. Puedo entrenar temprano y mantener disciplina sin afectar el trabajo."</p>
+              <strong class="mt-6 block text-lg">Laura P.</strong>
+              <span class="text-white/75">Habito y bienestar</span>
+            </article>
+          </div>
+          <div class="slider-dots mt-4 flex gap-2" aria-label="Controles de testimonios"></div>
+        </div>
+
+        <div class="reveal grid translate-y-6 gap-4 opacity-0 transition duration-700 ease-out md:grid-cols-2 lg:col-span-2 xl:grid-cols-4">
+          <article class="rounded-[24px] border border-white/15 bg-white/10 p-6 shadow-panel backdrop-blur-xl">
+            <strong class="block font-display text-4xl uppercase tracking-[0.05em] text-white">350+</strong>
+            <span class="text-white/80">miembros activos</span>
+          </article>
+          <article class="rounded-[24px] border border-white/15 bg-white/10 p-6 shadow-panel backdrop-blur-xl">
+            <strong class="block font-display text-4xl uppercase tracking-[0.05em] text-white">18</strong>
+            <span class="text-white/80">atletas destacados</span>
+          </article>
+          <article class="rounded-[24px] border border-white/15 bg-white/10 p-6 shadow-panel backdrop-blur-xl">
+            <strong class="block font-display text-4xl uppercase tracking-[0.05em] text-white">82%</strong>
+            <span class="text-white/80">mejora percibida en resistencia</span>
+          </article>
+          <article class="rounded-[24px] border border-white/15 bg-white/10 p-6 shadow-panel backdrop-blur-xl">
+            <strong class="block font-display text-4xl uppercase tracking-[0.05em] text-white">67%</strong>
+            <span class="text-white/80">aumento en fuerza y masa magra</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="scroll-mt-32 px-4 py-20 md:scroll-mt-36" id="contacto">
+      <div class="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1fr_1.1fr]">
+        <div class="reveal translate-y-6 rounded-[32px] border border-beast-line bg-gradient-to-b from-[rgba(17,25,41,0.86)] to-[rgba(8,13,22,0.92)] p-6 opacity-0 shadow-panel backdrop-blur-xl transition duration-700 ease-out md:min-h-[420px] lg:min-h-[520px]">
+          <p class="font-display text-lg uppercase tracking-[0.22em] text-beast-blue">Contacto directo</p>
+          <h2 class="mt-2 font-display text-[2.6rem] uppercase leading-[0.95] tracking-[0.04em] text-white [text-shadow:0_0_24px_rgba(78,199,255,0.16)] md:text-[4.3rem]">Recibe informacion y agenda tu visita.</h2>
+          <p class="mt-4 text-base leading-8 text-beast-muted">
+            Escribenos por Instagram o visita el punto fisico. Si prefieres, deja tu correo para recibir novedades,
+            promociones y horarios especiales.
+          </p>
+
+          <form class="newsletter-form mt-8 grid gap-3 md:grid-cols-[1fr_auto]" action="#" method="post">
+            <label for="email" class="sr-only">Correo electronico</label>
+            <input class="min-h-[54px] rounded-full border border-white/15 bg-white/5 px-4 text-white placeholder:text-beast-muted focus:border-beast-blue focus:outline-none" id="email" name="email" type="email" placeholder="Tu correo electronico" autocomplete="email">
+            <button class="inline-flex min-h-[54px] items-center justify-center rounded-full bg-gradient-to-br from-beast-blue to-[#8de2ff] px-5 py-3 font-bold text-[#051018] shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_0_25px_rgba(78,199,255,0.35)] transition hover:-translate-y-0.5" type="submit">Suscribirme</button>
+          </form>
+
+          <div class="mt-5 grid gap-2 text-[#d7e3f9]">
+            <a class="border-t border-white/10 py-3" href="https://www.instagram.com/beast_mode_colombia/" target="_blank" rel="noreferrer">@beast_mode_colombia</a>
+            <a class="border-t border-white/10 py-3" href="https://maps.app.goo.gl/QwfLKq4GPdfSsbFU8" target="_blank" rel="noreferrer">Cll 11 Sur # 1 b 39 Este - San Cristobal Sur</a>
+          </div>
+        </div>
+
+        <div class="reveal overflow-hidden rounded-[32px] border border-beast-line bg-[#0b101a] opacity-0 shadow-panel transition duration-700 ease-out md:min-h-[420px] lg:min-h-[520px]">
+          <iframe
+            class="h-full min-h-[340px] w-full border-0 [filter:grayscale(1)_invert(0.92)_contrast(1.15)_saturate(0.3)] md:min-h-[420px] lg:min-h-[520px]"
+            title="Mapa de BeastMode Gym"
+            src="https://maps.google.com/maps?q=Cll%2011%20Sur%20%23%201%20b%2039%20Este%20San%20Cristobal%20Sur&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#dfe7f3] px-4 pt-10 text-[#132036]">
+    <div class="mx-auto grid max-w-7xl gap-8 pb-8 md:grid-cols-2 xl:grid-cols-[1.2fr_1fr_1fr_1fr]">
+      <div>
+        <a class="inline-flex items-center gap-3" href="#top" id="top">
+          <img class="h-12 w-12 rounded-2xl object-cover" src="logo.jpg" alt="">
+          <span class="grid">
+            <strong class="font-display text-2xl uppercase tracking-[0.04em] leading-none">BeastMode Gym</strong>
+            <small class="text-sm text-[#4f617d]">Disciplina con identidad propia</small>
+          </span>
+        </a>
+        <p class="mt-4 leading-7">Cll 11 Sur # 1 b 39 Este<br>San Cristobal Sur</p>
+      </div>
+
+      <div>
+        <h3 class="font-display text-[2rem] uppercase leading-none tracking-[0.04em]">Menu</h3>
+        <ul class="mt-3 space-y-2 text-[#22324c]">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#planes">Planes</a></li>
+          <li><a href="#historias">Resultados</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display text-[2rem] uppercase leading-none tracking-[0.04em]">Quick links</h3>
+        <ul class="mt-3 space-y-2 text-[#22324c]">
+          <li><a href="https://maps.app.goo.gl/QwfLKq4GPdfSsbFU8" target="_blank" rel="noreferrer">Google Maps</a></li>
+          <li><a href="https://www.instagram.com/beast_mode_colombia/" target="_blank" rel="noreferrer">Instagram</a></li>
+          <li><a href="#planes">Planes mensuales</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display text-[2rem] uppercase leading-none tracking-[0.04em]">Operacion</h3>
+        <ul class="mt-3 space-y-2">
+          <li>Lun - Vie: 5:00 am - 10:00 pm</li>
+          <li>Sab: 8:00 am - 4:00 pm</li>
+          <li>Dom: 8:00 am - 2:00 pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-[#132036]/10 px-4 py-4 text-center text-sm text-[#4f617d]">
+      <p>© 2026 BeastMode Gym. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

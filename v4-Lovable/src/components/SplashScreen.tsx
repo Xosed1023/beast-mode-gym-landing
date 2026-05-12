@@ -13,7 +13,7 @@ const SPEED = Math.max(
   0.1,
   parseFloat(import.meta.env.VITE_SPLASH_DURATION ?? "1") || 1,
 );
-const STAY = import.meta.env.VITE_SPLASH_STAY === "false";
+const STAY = import.meta.env.VITE_SPLASH_STAY === "true";
 
 const ms = (base: number) => Math.round(base * SPEED);
 

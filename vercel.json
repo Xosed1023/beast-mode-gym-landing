@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/v1/:path*", "destination": "/v1/:path*" },
+    { "source": "/v2/:path*", "destination": "/v2/:path*" },
+    { "source": "/v3/:path*", "destination": "/v3/:path*" },
+    { "source": "/v4/:path*", "destination": "/v4/:path*" },
+    { "source": "/v5/:path*", "destination": "/v5/:path*" }
+  ]
+}

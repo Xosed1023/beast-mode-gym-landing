@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --yes)",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"gym fitness dark neon energetic landing page\" --design-system -p \"BeastMode Gym\")",
+      "Bash(py --version)",
+      "Bash(py .claude/skills/ui-ux-pro-max/scripts/search.py \"gym fitness dark neon energetic landing page\" --design-system -p \"BeastMode Gym\")"
+    ]
+  }
+}
