@@ -1,4 +1,6 @@
 {
+  "framework": "nextjs",
+  "outputDirectory": ".next",
   "rewrites": [
     { "source": "/v1/:path*", "destination": "/v1/:path*" },
     { "source": "/v2/:path*", "destination": "/v2/:path*" },
