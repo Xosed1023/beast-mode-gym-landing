@@ -29,13 +29,13 @@ copyTo(join(ROOT, "v2-gym-page"), join(PUBLIC, "v2"));
 
 // ── V3: Next.js → static export ───────────────────────────────────────────
 console.log("\n=== V3 (Next.js export) ===");
-run("npm install --prefer-offline", join(ROOT, "v3-v0App"));
+run("npm ci", join(ROOT, "v3-v0App"));
 run("npm run build", join(ROOT, "v3-v0App"));
 copyTo(join(ROOT, "v3-v0App", "out"), join(PUBLIC, "v3"));
 
 // ── V4: Vite SPA standalone ────────────────────────────────────────────────
 console.log("\n=== V4 (Vite SPA) ===");
-run("npm install --prefer-offline", join(ROOT, "v4-Lovable"));
+run("npm ci", join(ROOT, "v4-Lovable"));
 run("npm run build:spa", join(ROOT, "v4-Lovable"));
 copyTo(join(ROOT, "v4-Lovable", "dist-spa"), join(PUBLIC, "v4"));
 // Renombrar index.spa.html → index.html para servicio estándar
@@ -45,7 +45,7 @@ if (existsSync(v4Spa)) renameSync(v4Spa, v4Index);
 
 // ── V5: Vite + React ──────────────────────────────────────────────────────
 console.log("\n=== V5 (Vite) ===");
-run("npm install --prefer-offline", join(ROOT, "v5-bolt"));
+run("npm ci", join(ROOT, "v5-bolt"));
 run("npm run build", join(ROOT, "v5-bolt"));
 copyTo(join(ROOT, "v5-bolt", "dist"), join(PUBLIC, "v5"));
 
